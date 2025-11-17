@@ -2,7 +2,7 @@
 // Get list of github repositories
 async function getRepos(mode="repos", page="") {
     if (mode == "repos") {
-        let response = await fetch("https://api.github.com/users/Yoinnkkk/repos");
+        let response = await fetch("https://api.github.com/users/aYoink/repos");
         let data = await response.json();
         return data;
     } else if (mode == "pagecheck") {
@@ -50,8 +50,8 @@ function listAllRepos() {
             console.log(card.card.getBoundingClientRect().top)
             card.card.addEventListener('click', function (){
                 getRepos("pagecheck", response[i].name).then(function(eventreturn) {
-                    if (eventreturn == false  || response[i].name == "Yoinnkkk.github.io") {
-                        location.href = `https://www.github.com/Yoinnkkk/${response[i].name}`;
+                    if (eventreturn == false  || response[i].name == "aYoink.github.io") {
+                        location.href = `https://www.github.com/aYoink/${response[i].name}`;
                     } else {
                         location.href = `https://www.yoink.space/${response[i].name}`;
                     }
